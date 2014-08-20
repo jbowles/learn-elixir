@@ -1,0 +1,3 @@
+defmodule Functor do
+end
+

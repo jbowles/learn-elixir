@@ -59,12 +59,12 @@ val = {
   {:whose, "hay"},
   {:those, "those"}
 }
-#Recurser.finder(val,(tuple_size(val) - 1))
+Recurser.finder(val,(tuple_size(val) - 1))
 #Enum.reduce(val, fn x -> elem(x, 1) end)
 
-#IO.puts Recurser.sum_list([2,5,7,9], 0)
-#service_tuple = {:service, {:recurser, "Message Payload"}, {:error, "Some Error"}, {:resurser, "resurser"}}
-#Recurser.match_elem(service_tuple,10)
+IO.puts Recurser.sum_list([2,5,7,9], 0)
+service_tuple = {:service, {:recurser, "Message Payload"}, {:error, "Some Error"}, {:resurser, "resurser"}}
+Recurser.match_elem(service_tuple,10)
 
-#error_tuple = {:this, "error message"}
-#Recurser.match_elem(error_tuple,10)
+error_tuple = {:this, "error message"}
+Recurser.match_elem(error_tuple,10)

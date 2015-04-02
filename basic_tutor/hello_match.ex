@@ -15,6 +15,27 @@ defmodule Mymatcher do
     end
   end
 
+  def normalize({:down, str}) do
+    String.downcase(str)
+  end
+  def normalize({:up, str}) do
+    String.upcase(str)
+  end
+  def normalize({_, str}) do
+    str
+  end
+
+  #def normalize(string_direction) do
+  #  case string_direction do
+  #    {:down, str} ->
+  #      String.downcase(str)
+  #    {:up, str} ->
+  #      String.upcase(str)
+  #    {_, str} ->
+  #      str
+  #  end
+  #end
+
   # recursivley match against a list of tuples IFF first elem atom matches
   #  def matchit([tuple]) do
   #    {:ok,b,c} = tuple
@@ -25,5 +46,8 @@ defmodule Mymatcher do
 end
 
 #Mymatcher.matchme
-Mymatcher.matchit({:me, "this","that"})
+#Mymatcher.matchit({:me, "this","that"})
+IO.puts Mymatcher.normalize({:up, "Up this that"})
+IO.puts Mymatcher.normalize({:down, "Down THIS that"})
+IO.puts Mymatcher.normalize({:ok, "Ok thiS that"})
 #Mymatcher.matchit({:hello, "this", "that"})

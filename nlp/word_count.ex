@@ -23,7 +23,8 @@ defmodule WordCounter do
 
   def count_unique(words), do: count_unique(HashDict.new, words)
   defp count_unique(hash, [head|tail]) do
-    hash = HashDict.update hash, head, 1, fn val -> val + 1 end
+    #hash = HashDict.update hash, head, 1, fn val -> val + 1 end
+    hash = HashDict.update hash, head, 1, &(&1 + 1)
     count_unique hash, tail
   end
   defp count_unique(hash, []), do: hash
@@ -37,9 +38,9 @@ defmodule WordCounter do
   end
 end
 
-#s = "Check out this this sentece sentence and and and and it has some words for counting and passing data from one one one function to another... yay yay, yay."
+s = "Check out this this sentece sentence and and and and it has some words for counting and passing data from one one one function to another... yay yay, yay."
 
-#Word.count(s)
+IO.puts length(WordCounter.count(s))
 #IO.puts Word.count(s)
 #words = Word.find_words(s)
 #IO.puts words
